@@ -8,7 +8,7 @@ public class SampleFileCreator {
 
 		for (int round = 1; round <= 10; round++) {
 			// Get the output file name and round number
-			String fileName = "category_name_" + round + ".txt";
+			String fileName = "data/ISYS_320_Week_" + round + ".txt";
 			String roundNumber = String.valueOf(round);
 			File f = new File(fileName);
 
@@ -19,8 +19,8 @@ public class SampleFileCreator {
 			try {
 				s = new PrintStream(f);
 				for (int i = 1; i <= 10; i++) {
-					s.println("Question " + i + " of 10 in round " + roundNumber);
-					s.println("Answer " + i + " of 10 in round " + roundNumber);
+					s.println("Question " + i + " of 10 in week " + roundNumber);
+					s.println("Answer " + i + " of 10 in week " + roundNumber);
 					s.println();
 				}
 
