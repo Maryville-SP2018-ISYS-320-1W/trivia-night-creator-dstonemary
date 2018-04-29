@@ -43,14 +43,14 @@ public class SlideShowBuilder {
 	    }
 	}
 
-	public void buildSlideShow(String[] categories, String[] questions, String[] answers, String fileName) {
+	public void buildSlideShow(String[] categories, String[] questions, String[] answers, String fileName,int totalQandA) {
 		XMLSlideShow ppt = new XMLSlideShow();
 		XSLFSlideMaster defaultMaster = ppt.getSlideMasters().get(0);
 		
 		for (int i = 0; i < 10; i++) {
 			makeRoundSlide(ppt, defaultMaster, "Round " + (i+1));
-			for (int j = 0; j < 10; j++) {
-				makeSlide(ppt, defaultMaster, categories[i], questions[i * 10 + j], answers[i * 10 + j]);
+			for (int j = 0; j < totalQandA; j++) {
+				makeSlide(ppt, defaultMaster, categories[i], questions[i * totalQandA + j], answers[i * totalQandA + j]);
 			}
 		}
 		

@@ -11,7 +11,7 @@ public class BuildTriviaNightPresentation {
 		SlideShowBuilder builder = new SlideShowBuilder();
 		QuestionsManager qm = new QuestionsManager("data");
 		
-		builder.buildSlideShow(qm.getCategories(), qm.getQuestions(), qm.getAnswers(), fileName);
+		builder.buildSlideShow(qm.getCategories(), qm.getQuestions(), qm.getAnswers(), fileName, qm.getTotalQandA());
 //		builder.printSlideShowInfo("Sample.pptx");
 	}
 	

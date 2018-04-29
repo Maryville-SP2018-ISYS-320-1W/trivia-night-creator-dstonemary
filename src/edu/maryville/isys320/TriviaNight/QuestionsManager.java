@@ -12,20 +12,23 @@ public class QuestionsManager {
 	public ArrayList<String> categories = new ArrayList<String>();
 	public ArrayList<String> questions = new ArrayList<String>();;
 	public ArrayList<String> answers = new ArrayList<String>();;
-	
+	int totalQandA  = 0;
 	public QuestionsManager(String categoryFolder) {
 		File fldr = new File(categoryFolder);
 		String[] files = fldr.list();
 		
 		Collections.addAll(categories,files);
 		Collections.sort(categories);
+		
 		for (String fileName : categories) {
+			totalQandA  = 0;
 			File f = new File(categoryFolder + "/" + fileName);
 			try {
 				Scanner fs = new Scanner(f);
 				while(fs.hasNextLine()) { // Assume Q, A, Blank Line triplets 
 					questions.add(fs.nextLine());
 					answers.add(fs.nextLine());
+					totalQandA++;
 					fs.nextLine();
 				}
 				fs.close();
@@ -48,6 +51,9 @@ public class QuestionsManager {
 	
 	public String[] getAnswers() {
 		return answers.toArray(new String[answers.size()]);
+	}
+	public int getTotalQandA(){
+		return totalQandA;
 	}
 
 }
