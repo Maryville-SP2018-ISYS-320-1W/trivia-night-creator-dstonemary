@@ -16,7 +16,7 @@ public class SampleFileCreator {
 		boolean isContinue = true;
 		int totalQuestionNum = 0 ;					
 		do{
-			System.out.print("Please enter Number of questions for each category : ");
+			System.out.print("Please enter Number of questions for each 10 categories : ");
 			if(questionNum.hasNextInt()){
 				isContinue = false;
 				totalQuestionNum = questionNum.nextInt();
@@ -29,7 +29,7 @@ public class SampleFileCreator {
 			// Get the output file name and round number
 			//String fileName = "category_name_" + round + ".txt";
 			String catName = "";
-			System.out.print("please enter category name : ");
+			System.out.print("please enter category name "+round+": ");
 			//input = new Scanner(System.in);
 			if(inputCategory.hasNext()){
 				catName = inputCategory.nextLine();
